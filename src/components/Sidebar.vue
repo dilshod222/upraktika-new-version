@@ -8,13 +8,17 @@
         <img src="../assets/book.png" alt="">
         <span>Учебный материал</span>
       </RouterLink>
-      <RouterLink to="/about" title="Банк вопросов">
+      <RouterLink to="/about" title="Тесты для практики">
         <img src="../assets/test_practice.png" alt="">
         <span>Тесты для практики</span>
       </RouterLink>
       <RouterLink to="/about" title="Экзамены">
         <img src="../assets/certificate.png" alt="">
         <span>Экзамены</span>
+      </RouterLink>
+      <RouterLink to="/about" title="Все новости">
+        <img src="../assets/megaphone.png" alt="">
+        <span>Все новости</span>
       </RouterLink>
       <RouterLink to="/about" title="Отправить отзыв">
         <img src="../assets/chat.png" alt="">
@@ -25,7 +29,7 @@
         <span>Пользователи</span>
       </RouterLink>
       <RouterLink to="/about" title="Добавить/Редактировать новость">
-        <img src="../assets/megaphone.png" alt="">
+        <img src="../assets/megaphone2.png" alt="">
         <span>Добавить/Редактировать новость</span>
       </RouterLink>
       <RouterLink to="/about" title="Добавить/Редактировать тему">
@@ -84,9 +88,7 @@ a {
   }
 
   &:hover {
-    background-color: #eeeef3;
-    transition: 0.2s ease-in;
-
+    color: #8faef3;
   }
 }
 
