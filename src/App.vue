@@ -12,13 +12,12 @@ const ToggleMenu = () => {
   is_expanded.value = !is_expanded.value
 }
 
-
-
 </script>
 
 <template>
 
   <Navbar />
+
 
   <div class="d-flex flex-nowrap">
 
@@ -31,15 +30,17 @@ const ToggleMenu = () => {
       <Sidebar />
     </div>
 
-    <div class="main ps-3 w-100">
+    <div class="main w-100">
       <div class="container">
-        <RouterView />
-      </div>
+          <RouterView />
+        </div>
     </div>
   </div>
 
 
 </template>
+
+
 
 <style lang="scss" scoped>
 :root {
@@ -67,47 +68,58 @@ const ToggleMenu = () => {
   box-shadow: 0 10px 30px #ded9d9;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 991px) {
   .sidebar {
     width: 360px;
   }
-  .toggle {
+  .sidebar.false {
+    .toggle {
+      display: flex;
+      justify-content: end;
+      transform: translateX(-10px);
+    }
+    button {
+      transform: rotate(180deg);
+    }
+    &+.main {
+      margin-left: 360px;
+    }
+  }
+  .sidebar.is-expanded {
+    width: 60px;
+    &+.main {
+      margin-left: 60px;
+      .container {
+        .content {
+          margin-left: 60px;
+          background-color: red;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 300px) and (max-width: 991px) {
+  .sidebar {
     display: none;
   }
-  .main {
-    margin-left: 360px;
+  .sidebar.is-expanded {
+    width: 300px;
+    &+.main {
+    }
+    .toggle {
+      display: flex;
+      justify-content: end;
+      transform: translateX(-10px);
+      button {
+        transform: rotate(180deg);
+      }
+    }
   }
-}
-
-@media (max-width: 992px) and (min-width: 300px){
-  .sidebar {
+  .sidebar.false {
     width: 60px;
-  }
-  .main {
-   margin-left: 60px;
-  }
-}
-
-
-
-.sidebar.is-expanded {
-  width: 360px;
-  button {
-    transform: rotate(180deg);
-  }
-
-  .toggle {
-    display: flex;
-    justify-content: end;
-    transform: translateX(-10px);
-
-  }
-}
-
-
-.sidebar.false {
-  .toggle:hover{
-    transform: translateX(3px);
+    &+.main {
+    }
   }
 }
 </style>

@@ -94,15 +94,34 @@ a {
 
 .sidebar.false {
   a  {
+
   }
 }
 
-@media (min-width: 300px) and (max-width: 992px){
-  .sidebar-links {
-    a {
-      span {
-        display: none;
+
+
+@media (min-width: 300px) and (max-width: 991px){
+  .sidebar.false {
+    .sidebar-links {
+      a {
+        span {
+          display: none;
+        }
       }
+    }
+  }
+  .sidebar.is-expanded {
+    .sidebar-links {
+      a {
+        span {
+          display: block;
+        }
+      }
+    }
+    .toggle {
+      display: flex;
+      justify-content: end;
+      transform: rotate(180deg);
     }
   }
   .toggle{
@@ -113,7 +132,7 @@ a {
 .sidebar.is-expanded {
   a {
     span {
-      display: block ;
+      display: none ;
     }
   }
 }
